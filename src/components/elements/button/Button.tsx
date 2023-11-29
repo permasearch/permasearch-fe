@@ -27,21 +27,19 @@ export const Button: React.FC<ButtonProps> = ({
       } ${STYLE_GUIDE[type].border} flex items-center justify-center ${
         children ? "gap-2 rounded-full" : "rounded-full"
       } ${
-        padding
-          ? padding
-          : `${children ? "px-6" : "px-3"} ${thin ? "py-1.5" : "py-3"}`
+        padding ? padding : `${children ? "px-6" : "px-3"} ${"py-1.5"}`
       } transition duration-200 `}
       {...props}
     >
       {loading ? (
         <>
           {/* <SpinnerIcon className="animate-spin" /> */}
-          <p>Loading...</p>
+          <p className="text-sm">Loading...</p>
         </>
       ) : (
         <>
           {leftIcon && leftIcon}
-          <p>{children}</p>
+          <p className="text-sm">{children}</p>
           {rightIcon && rightIcon}
         </>
       )}

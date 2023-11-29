@@ -1,9 +1,13 @@
-import { LandingSection } from "@modules";
-import { Button } from "@elements";
+import { LandingSection, QueryResultSection } from "@modules";
+import { useSearchParams } from "next/navigation";
+
 export default function Home() {
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search");
+
   return (
-    <div className="text-2xl">
-      <Button type="secondary">hello</Button>
+    <div className="h-screen ">
+      {search ? <QueryResultSection search={search} /> : <LandingSection />}
     </div>
   );
 }
