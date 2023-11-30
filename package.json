@@ -15,10 +15,12 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/inter": "^5.0.15",
     "@heroicons/react": "^2.0.18",
+    "axios": "^1.6.2",
     "framer-motion": "^10.16.5",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",
