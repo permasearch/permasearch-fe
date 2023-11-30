@@ -18,8 +18,9 @@ export default function DocumentDetail() {
     if (router.query.path) {
       let pathList = router.query.path as String[];
       let path = pathList.join("/");
+
       axios
-        .get(`${process.env.NEXT_PUBLIC_API_URL}/?path=${path}`)
+        .get(`/api/get-doc?path=${encodeURIComponent(path)}`)
         .then((res) => setDocument(res.data))
         .catch((err) => toast.error(err.response.data.message));
     }
