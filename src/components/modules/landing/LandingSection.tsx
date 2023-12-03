@@ -19,10 +19,10 @@ export const LandingSection = () => {
   return (
     <div className="h-full flex items-center  justify-center">
       <div>
-        <div className="text-center text-blue-500 text-3xl font-black">
+        <div className="text-center text-blue-500 text-3xl font-black animate-slide-top">
           Permasearch
         </div>
-        <InputGroup className="mt-5">
+        <InputGroup className="mt-5 animate-fade-in-fwd">
           <InputLeftElement pointerEvents="none">
             <Search2Icon color={"blue.500"} />
           </InputLeftElement>
@@ -41,7 +41,7 @@ export const LandingSection = () => {
             onKeyDown={handleKeyDown}
           />
         </InputGroup>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 animate-fade-in-fwd-2">
           <Button type="primary" onClick={() => routeToQueryResult(value)}>
             Search
           </Button>

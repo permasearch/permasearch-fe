@@ -8,14 +8,14 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const { path } = req.query;
+    const { search } = req.query;
 
-    if (typeof path !== "string") {
+    if (typeof search !== "string") {
       return res.status(400).send("Bad Request");
     }
 
     axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}/docs/?path=${path}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/?search=${search}`)
       .then((response) => {
         res.status(200).json(response.data);
       })

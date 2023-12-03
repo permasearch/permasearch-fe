@@ -30,6 +30,9 @@
       "@images/*": ["public/images/*"]
     }
   },
+  "files": [
+    "node_modules/gsap/types/index.d.ts"
+  ],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
