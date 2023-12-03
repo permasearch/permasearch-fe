@@ -37,6 +37,7 @@ export const QueryResultSection: FC<QueryResultSectionProps> = ({ search }) => {
   };
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
+      setCurrentPage(1);
       routeToQueryResult(value);
     }
   };
