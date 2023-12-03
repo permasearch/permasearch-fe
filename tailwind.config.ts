@@ -17,9 +17,11 @@ const config: Config = {
         "slide-top":
           "slide-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
         "fade-in-fwd":
-          "fade-in-fwd 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s  both",
+          "fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s  both",
         "fade-in-fwd-2":
-          "fade-in-fwd 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s  both",
+          "fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.7s  both",
+        "fade-in-fwd-3":
+          "fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000)  both",
       },
       keyframes: {
         "slide-top": {

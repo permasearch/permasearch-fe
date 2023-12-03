@@ -90,20 +90,40 @@ export const QueryResultSection: FC<QueryResultSectionProps> = ({ search }) => {
         </InputGroup>
       </div>{" "}
       <div className="mt-10 flex flex-col gap-10">
-        {currentDocuments.map((d) => (
-          <Link href={`/${d.path}`}>
-            <div className="cursor-pointer doc">
-              <h1 className="text-2xl font-bold text-blue-500 hover:text-blue-400 ease-in duration-100">
-                {d.title}
-              </h1>
-              <p className="text-blue-400 ">{d.path}</p>
-              <p className="text-gray-700 mt-3">{d.text}</p>
+        {isLoaded ? (
+          documents.length > 0 ? (
+            currentDocuments.map((d) => (
+              <Link href={`/${d.path}`}>
+                <div className="cursor-pointer animate-fade-in-fwd-3">
+                  <h1 className="text-2xl font-bold text-blue-500 hover:text-blue-400 ease-in duration-100">
+                    {d.title}
+                  </h1>
+                  <p className="text-blue-400 ">{d.path}</p>
+                  <p className="text-gray-700 mt-3">{d.text}</p>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <div className="text-center font-black text-blue-500 text-2xl mt-20 animate-fade-in-fwd-3">
+              No Documents Found
             </div>
-          </Link>
-        ))}
+          )
+        ) : (
+          <div className="cursor-pointer animate-fade-in-fwd-3">
+            <Skeleton>
+              <h1 className="text-2xl font-bold text-blue-500 hover:text-blue-400 ease-in duration-100"></h1>
+            </Skeleton>
+            <Skeleton>
+              <p className="text-blue-400 "></p>
+            </Skeleton>
+            <Skeleton>
+              <p className="text-gray-700 mt-3"></p>
+            </Skeleton>
+          </div>
+        )}
       </div>{" "}
-      {isLoaded && (
-        <Stack spacing={2} sx={{ mt: 10 }}>
+      {isLoaded && documents.length > 0 && (
+        <Stack spacing={2} sx={{ mt: 10 }} className="animate-fade-in-fwd-3">
           <Pagination
             count={totalPages}
             page={currentPage}
