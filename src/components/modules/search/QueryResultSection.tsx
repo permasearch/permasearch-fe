@@ -95,7 +95,7 @@ export const QueryResultSection: FC<QueryResultSectionProps> = ({ search }) => {
           documents.length > 0 ? (
             currentDocuments.map((d) => (
               <Link href={`/${d.path}`}>
-                <div className="cursor-pointer animate-fade-in-fwd-3">
+                <div className="cursor-pointer animate-fade-in-fwd">
                   <h1 className="text-2xl font-bold text-blue-500 hover:text-blue-400 ease-in duration-100">
                     {d.title}
                   </h1>
@@ -105,12 +105,12 @@ export const QueryResultSection: FC<QueryResultSectionProps> = ({ search }) => {
               </Link>
             ))
           ) : (
-            <div className="text-center font-black text-blue-500 text-2xl mt-20 animate-fade-in-fwd-3">
+            <div className="text-center font-black text-blue-500 text-2xl mt-20 animate-fade-in-fwd">
               No Documents Found
             </div>
           )
         ) : (
-          <div className="cursor-pointer animate-fade-in-fwd-3">
+          <div className="cursor-pointer animate-fade-in-fwd">
             <Skeleton>
               <h1 className="text-2xl font-bold text-blue-500 hover:text-blue-400 ease-in duration-100"></h1>
             </Skeleton>
@@ -124,7 +124,7 @@ export const QueryResultSection: FC<QueryResultSectionProps> = ({ search }) => {
         )}
       </div>{" "}
       {isLoaded && documents.length > 0 && (
-        <Stack spacing={2} sx={{ mt: 10 }} className="animate-fade-in-fwd-3">
+        <Stack spacing={2} sx={{ mt: 10 }} className="animate-fade-in-fwd">
           <Pagination
             count={totalPages}
             page={currentPage}
